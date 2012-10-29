@@ -70,7 +70,7 @@
     
     // support old versions
     NSInteger version = [coder versionForClassName:@"Card"];
-    NSLog(@"initWithCoder version %ld", version);
+    //NSLog(@"initWithCoder version %ld", version);
     if (version == NSNotFound) NSLog(@"error loading cardbook file, version number for Card class not found");
     created = [[coder decodeObject] retain];
     creator = [[coder decodeObject] retain];

@@ -157,7 +157,7 @@ NSString *CardPboardType = @"CardPboardType";
         [coder release];
     } else {
         // keyed archive
-        NSLog(@"keyed archive");
+        //NSLog(@"keyed archive");
         NSKeyedUnarchiver *coder = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         [self setCards:[coder decodeObjectForKey:@"CardBookCards"]];
         windowRect = [coder decodeRectForKey:@"CardBookWindowRect"];
