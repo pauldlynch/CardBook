@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>add</key>
+	<dict>
+		<key>identifier</key>
+		<string>add</string>
+		<key>label</key>
+		<string>Add</string>
+		<key>tooltip</key>
+		<string>Add a new card</string>
+		<key>selector</key>
+		<string>newCard:</string>
+                <key>image</key>
+                <string>add</string>
+	</dict>
+	<key>delete</key>
+	<dict>
+		<key>identifier</key>
+		<string>delete</string>
+		<key>label</key>
+		<string>Delete</string>
+		<key>tooltip</key>
+		<string>Delete selected cards</string>
+		<key>selector</key>
+		<string>deleteSelectedCard:</string>
+                <key>image</key>
+                <string>delete</string>
+	</dict>
+	<key>focus</key>
+	<dict>
+		<key>identifier</key>
+		<string>focus</string>
+		<key>label</key>
+		<string>Focus</string>
+		<key>tooltip</key>
+		<string>Focus on selected cards</string>
+		<key>selector</key>
+		<string>focus:</string>
+	</dict>
+	<key>unfocus</key>
+	<dict>
+		<key>identifier</key>
+		<string>unfocus</string>
+		<key>label</key>
+		<string>Unfocus</string>
+		<key>tooltip</key>
+		<string>Show all cards</string>
+		<key>selector</key>
+		<string>unfocus:</string>
+	</dict>
+	<key>sort</key>
+	<dict>
+		<key>identifier</key>
+		<string>sort</string>
+		<key>label</key>
+		<string>Sort</string>
+		<key>tooltip</key>
+		<string>Sort cards</string>
+		<key>selector</key>
+		<string>sort:</string>
+                <key>image</key>
+                <string>sort</string>
+	</dict>
+	<key>copy</key>
+	<dict>
+		<key>identifier</key>
+		<string>copy</string>
+		<key>label</key>
+		<string>Copy</string>
+		<key>tooltip</key>
+		<string>Copy selection to pasteboard</string>
+		<key>selector</key>
+		<string>copy:</string>
+                <key>image</key>
+                <string>copy</string>
+	</dict>
+	<key>cut</key>
+	<dict>
+		<key>identifier</key>
+		<string>cut</string>
+		<key>label</key>
+		<string>Cut</string>
+		<key>tooltip</key>
+		<string>Cut selection</string>
+		<key>selector</key>
+		<string>cut:</string>
+                <key>image</key>
+                <string>cut</string>
+	</dict>
+	<key>paste</key>
+	<dict>
+		<key>identifier</key>
+		<string>paste</string>
+		<key>label</key>
+		<string>Paste</string>
+		<key>tooltip</key>
+		<string>Paste from pasteboard</string>
+		<key>selector</key>
+		<string>paste:</string>
+                <key>image</key>
+                <string>paste</string>
+	</dict>
+	<key>inspector</key>
+	<dict>
+		<key>identifier</key>
+		<string>inspector</string>
+		<key>label</key>
+		<string>Show Info</string>
+		<key>tooltip</key>
+		<string>Show info</string>
+		<key>selector</key>
+		<string>showInspector:</string>
+                <key>image</key>
+                <string>inspect</string>
+	</dict>
+	<key>save</key>
+	<dict>
+		<key>identifier</key>
+		<string>save</string>
+		<key>label</key>
+		<string>Save</string>
+		<key>tooltip</key>
+		<string>Save current cardbook</string>
+		<key>selector</key>
+		<string>save:</string>
+                <key>image</key>
+                <string>save</string>
+	</dict>
+	<key>find</key>
+	<dict>
+		<key>identifier</key>
+		<string>find</string>
+		<key>label</key>
+		<string>Find</string>
+		<key>tooltip</key>
+		<string>Find next matching card</string>
+	</dict>
+	<key>help</key>
+	<dict>
+		<key>identifier</key>
+		<string>help</string>
+		<key>label</key>
+		<string>Help</string>
+		<key>tooltip</key>
+		<string>Display CardBook help</string>
+		<key>selector</key>
+		<string>help:</string>
+                <key>image</key>
+                <string>help</string>
+	</dict>
+	<key>NSToolbarCustomizeToolbarItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarCustomizeToolbarItem</string>
+	</dict>
+	<key>NSToolbarFlexibleSpaceItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarFlexibleSpaceItem</string>
+	</dict>
+	<key>NSToolbarPrintItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarPrintItem</string>
+	</dict>
+	<key>NSToolbarSeparatorItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarSeparatorItem</string>
+	</dict>
+	<key>NSToolbarShowColorsItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarShowColorsItem</string>
+	</dict>
+	<key>NSToolbarShowFontsItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarShowFontsItem</string>
+	</dict>
+	<key>NSToolbarSpaceItem</key>
+	<dict>
+		<key>identifier</key>
+		<string>NSToolbarSpaceItem</string>
+	</dict>
+</dict>
+</plist>

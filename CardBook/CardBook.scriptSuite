@@ -1,0 +1,51 @@
+{
+    "Name" = "CardBook";
+    "AppleEventCode" = "Cdbk";
+    
+    "Classes" = {
+        "NSApplication" = {
+            "Superclass" = "NSCoreSuite.NSApplication";
+            "ToManyRelationships" = {
+                "orderedDocuments" = {
+                    "Type" = "MyDocument";
+                    "AppleEventCode" = "docu";
+                };
+            };
+            "AppleEventCode" = "capp";
+        };
+        "MyDocument" = {
+            "Superclass" = "NSCoreSuite.NSDocument";
+            "AppleEventCode" = "docu";
+            "ToManyRelationships" = {
+                "cards" = {
+                    "Type" = "Card";
+                    "AppleEventCode" = "dccd";
+                };
+            };
+        };
+        "Card" = {
+            "Superclass" = "NSCoreSuite.AbstractObject";
+            "AppleEventCode" = "card";
+            "Attributes" = {
+                "cardString" = {
+                    "Type" = "NSString";
+                    "AppleEventCode" = "cdst";
+                    "ReadOnly" = "Yes";
+                };
+                "title" = {
+                    "Type" = "NSString";
+                    "AppleEventCode" = "titl";
+                    "ReadOnly" = "Yes";
+                };
+                "creator" = {
+                    "Type" = "NSString";
+                    "AppleEventCode" = "crtr";
+                };
+                "modifier" = {
+                    "Type" = "NSString";
+                    "AppleEventCode" = "mdfr";
+                };
+            };
+        };
+    };
+}

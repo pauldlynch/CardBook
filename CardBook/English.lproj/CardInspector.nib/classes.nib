@@ -1,0 +1,39 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {setLockedFlag = id; }; 
+            CLASS = CardInspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                createdField = NSTextField; 
+                creatorField = NSTextField; 
+                lockedButton = NSButton; 
+                modifiedField = NSTextField; 
+                modifierField = NSTextField; 
+                tabView = NSTabView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = InfoPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                createdField = id; 
+                creatorField = id; 
+                modifiedField = id; 
+                modifierField = id; 
+                tabView = NSTabView; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {colorDidChange = id; show = id; }; 
+            CLASS = Inspector; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {categoryText = id; colorWell = id; panel = id; tabView = id; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

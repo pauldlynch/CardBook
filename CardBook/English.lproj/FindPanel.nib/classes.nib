@@ -1,0 +1,29 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                findAll = id; 
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                orderFrontFindPanel = id; 
+            }; 
+            CLASS = FindPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                findField = NSTextField; 
+                findNextButton = id; 
+                ignoreCaseSwitch = NSButtonCell; 
+                message = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {ignoreCase = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

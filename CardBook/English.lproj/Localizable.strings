@@ -1,0 +1,8 @@
+/* Status displayed in find panel when the find string is not found. */
+"Not found" = "Not found";
+/* error return from Services */
+"Error: can't open a CardBook" = "Error: can't open a CardBook";
+/* status messages for document window */
+"%d cards" = "%d cards";
+"%d card(s) selected (out of %d)" = "%d card(s) selected (out of %d)";
+"%d cards selected (out of %d focused, %d total)" = "%d cards selected (out of %d focused, %d total";

@@ -1,0 +1,22 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                browseLaunchFile = id; 
+                takeKeepBackupFrom = id; 
+                takeLaunchFileFrom = id; 
+                takeOpenUntitledFrom = id; 
+            }; 
+            CLASS = PreferencesPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                keepBackupField = NSButton; 
+                launchFileField = NSTextField; 
+                openUntitledField = NSButton; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

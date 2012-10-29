@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {showInspector = id; showPreferences = id; }; 
+            CLASS = AppController; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                findAll = id; 
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                jumpToSelection = id; 
+                orderFrontFindPanel = id; 
+                takeFindStringFromSelection = id; 
+            }; 
+            CLASS = FindPanel; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                findField = NSTextField; 
+                findNextButton = id; 
+                ignoreCaseSwitch = NSButtonCell; 
+                message = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {
+            ACTIONS = {
+                deleteSelectedCard = id; 
+                findNext = id; 
+                findNextAndOrderFindPanelOut = id; 
+                findPrevious = id; 
+                focus = id; 
+                newCard = id; 
+                orderFrontFindPanel = id; 
+                sort = id; 
+                unfocus = id; 
+            }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

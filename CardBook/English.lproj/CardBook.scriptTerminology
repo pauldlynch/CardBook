@@ -1,0 +1,48 @@
+{
+    "Name" = "CardBook suite";
+    "Description" = "CardBook specific classes.";
+    
+    "Classes" = {
+        "NSApplication" = {
+            "Name" = "application";
+            "PluralName" = "applications";
+            "Description" = "CardBook's top level scripting object.";
+        };
+        "MyDocument" = {
+            "Name" = "document";
+            "PluralName" = "documents";
+            "Description" = "A CardBook document.";
+        };
+        "Card" = {
+            "Name" = "card";
+            "PluralName" = "cards";
+            "Description" = "A Card.";
+            "Attributes" = {
+                "cardString" = {
+                    "Name" = "content";
+                    "Description" = "A Card's content.";
+                };
+                "title" = {
+                    "Name" = "title";
+                    "Description" = "A Card's title.";
+                };
+                "creator" = {
+                    "Name" = "creator";
+                    "Description" = "A Card's creator.";
+                };
+                "created" = {
+                    "Name" = "created";
+                    "Description" = "A Card's creation timestamp.";
+                };
+                "modifier" = {
+                    "Name" = "modifier";
+                    "Description" = "A Card's modifier.";
+                };
+                "modified" = {
+                    "Name" = "modified";
+                    "Description" = "A Card's modification timestamp.";
+                };
+            };
+        };
+    };
+}

@@ -1,0 +1,32 @@
+{
+    IBClasses = (
+        {CLASS = CardsView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                copy = id; 
+                cut = id; 
+                deleteSelectedCard = id; 
+                find = id; 
+                focus = id; 
+                newCard = id; 
+                paste = id; 
+                sort = id; 
+                unfocus = id; 
+            }; 
+            CLASS = MyDocument; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                cardView = NSTextView; 
+                deleteButton = NSButton; 
+                findField = NSTextField; 
+                findView = id; 
+                scrollView = NSScrollView; 
+                statusField = NSTextField; 
+                tableView = NSTableView; 
+            }; 
+            SUPERCLASS = NSDocument; 
+        }
+    ); 
+    IBVersion = 1; 
+}
