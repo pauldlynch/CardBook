@@ -11,7 +11,7 @@
 
 @interface FindPanel : NSWindowController {
     NSString *findString;
-    int findIndex;
+    NSInteger findIndex;
     NSArray *cards;
 
     IBOutlet NSTextField *message;

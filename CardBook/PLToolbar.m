@@ -15,7 +15,7 @@
 
 - (id)initWithIdentifier:(NSString *)value target:(id)tget {
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *toolbarPath = [[bundle pathForResource:value ofType:@"plist"] retain];
+    NSString *toolbarPath = [bundle pathForResource:value ofType:@"plist"];
     identifier = [value retain];
     target = [tget retain];
     [self setItems:[NSDictionary dictionaryWithContentsOfFile:toolbarPath]];
@@ -94,7 +94,6 @@
             
             [dict setObject:value forKey:[item itemIdentifier]];
         }
-        [value release];
     }
     return dict;
 }

@@ -226,7 +226,7 @@ static id sharedInstance = nil;
     lastFindWasSuccessful = NO;
     if (text) {
         NSString *textContents = [text string];
-        unsigned textLength;
+        NSUInteger textLength;
         if (textContents && (textLength = [textContents length])) {
             NSRange range;
             unsigned options = 0;
@@ -274,7 +274,7 @@ static id sharedInstance = nil;
 
 - (NSRange)findString:(NSString *)string selectedRange:(NSRange)selectedRange options:(unsigned)options wrap:(BOOL)wrap {
     BOOL forwards = (options & NSBackwardsSearch) == 0;
-    unsigned length = [self length];
+    NSUInteger length = [self length];
     NSRange searchRange, range;
 
     if (forwards) {

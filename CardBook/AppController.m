@@ -34,8 +34,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDocumentController *dc = [NSDocumentController sharedDocumentController];
     MyDocument *document = [dc currentDocument];
-    if (!document) {
-        [dc openDocumentWithContentsOfFile:[defaults stringForKey:@"LaunchFile"] display:YES];
+    if (!document && [defaults stringForKey:@"LaunchFile"]) {
+        //[dc openDocumentWithContentsOfFile:[defaults stringForKey:@"LaunchFile"] display:YES];
+        [dc openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[defaults stringForKey:@"LaunchFile"]] display:YES error:nil];
     }
     [NSApp setServicesProvider:self];
 }
@@ -47,12 +48,13 @@
 {
     NSDocumentController *dc = [NSDocumentController sharedDocumentController];
     MyDocument *document = [dc currentDocument];
-    [dc setShouldCreateUI:YES];
+    //[dc setShouldCreateUI:YES];
     if (!document) {
         if ([[dc documents] count] > 0)
             document = [[dc documents] objectAtIndex:0];
     if (!document)
-            document = [dc openUntitledDocumentOfType:@"CardBook Document" display:YES];
+            //document = [dc openUntitledDocumentOfType:@"CardBook Document" display:YES];
+            document = [dc openUntitledDocumentAndDisplay:YES error:nil];
     }
     if (!document) {
         *error = NSLocalizedString(@"Error: can't open a CardBook",

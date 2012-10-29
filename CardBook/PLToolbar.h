@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PLToolbar : NSObject {
+@interface PLToolbar : NSObject <NSToolbarDelegate> {
 
     NSString *identifier;
     NSToolbar *toolbar;

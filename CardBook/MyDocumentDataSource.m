@@ -12,7 +12,7 @@
 
 // data source methods
 
-- (int) numberOfRowsInTableView:(NSTableView *)tv {
+- (NSInteger) numberOfRowsInTableView:(NSTableView *)tv {
     return [[self cards] count];
 }
 
@@ -24,7 +24,8 @@
 - (void)tableView:(NSTableView *)tv setObjectValue:(id)object forTableColumn:(NSTableColumn *)tc row:(int)row {
     // NSUndoManager *undoManager = [self undoManager];
     Card *c = [[self cards] objectAtIndex:row];
-    [c takeValue:object forKey:[tc identifier]];
+    //[c takeValue:object forKey:[tc identifier]];
+    [c setValue:object forKey:[tc identifier]];
     // should be handled by undo...
     [self updateChangeCount:NSChangeDone];
 }

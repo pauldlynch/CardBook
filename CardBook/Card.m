@@ -42,16 +42,36 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:created];
+    /*[coder encodeObject:created];
     [coder encodeObject:creator];
     [coder encodeObject:modified];
     [coder encodeObject:modifier];
     [coder encodeObject:card];
-    [coder encodeValueOfObjCType:@encode(bool) at:&isLocked];
+    [coder encodeValueOfObjCType:@encode(bool) at:&isLocked];*/
+    
+    [coder encodeObject:created forKey:@"CardBookCreated"];
+    [coder encodeObject:creator forKey:@"CardBookCreator"];
+    [coder encodeObject:modified forKey:@"CardBookModified"];
+    [coder encodeObject:modifier forKey:@"CardBookModifier"];
+    [coder encodeObject:card forKey:@"CardBookCard"];
+    [coder encodeBool:isLocked forKey:@"CardBookIsLocked"];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
-    int version = [coder versionForClassName:@"Card"];
+    if ([coder allowsKeyedCoding]) {
+        created = [[coder decodeObjectForKey:@"CardBookCreated"] retain];
+        creator = [[coder decodeObjectForKey:@"CardBookCreator"] retain];
+        modified = [[coder decodeObjectForKey:@"CardBookModified"] retain];
+        modifier = [[coder decodeObjectForKey:@"CardBookModifier"] retain];
+        [self setCard:[coder decodeObjectForKey:@"CardBookCard"]];
+        isLocked = [coder decodeBoolForKey:@"CardBookIsLocked"];
+        return self;
+    }
+    
+    // support old versions
+    NSInteger version = [coder versionForClassName:@"Card"];
+    NSLog(@"initWithCoder version %ld", version);
+    if (version == NSNotFound) NSLog(@"error loading cardbook file, version number for Card class not found");
     created = [[coder decodeObject] retain];
     creator = [[coder decodeObject] retain];
     modified = [[coder decodeObject] retain];
@@ -60,7 +80,7 @@
         [self setCardRTFD:[coder decodeObject]];
     else
         [self setCard:[coder decodeObject]];
-    if (version > 2) {
+    if (version == 3) {
         [coder decodeValueOfObjCType:@encode(bool) at:&isLocked];
     }
     return self;
@@ -79,15 +99,15 @@
 }
 
 - (void)setCardRTFD:(NSData *)value {
-    [self setCard:[[NSAttributedString alloc] initWithRTFD:value documentAttributes:nil]];
+    [self setCard:[[[NSAttributedString alloc] initWithRTFD:value documentAttributes:nil] autorelease]];
 }
 
 - (void)setCardRTF:(NSData *)value {
-    [self setCard:[[NSAttributedString alloc] initWithRTF:value documentAttributes:nil]];
+    [self setCard:[[[NSAttributedString alloc] initWithRTF:value documentAttributes:nil] autorelease]];
 }
 
 - (void)setCardString:(NSString *)value {
-    [self setCard:[[NSAttributedString alloc] initWithString:value]];
+    [self setCard:[[[NSAttributedString alloc] initWithString:value] autorelease]];
 }
 
 - (NSString *)title {

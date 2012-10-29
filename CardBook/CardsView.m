@@ -13,6 +13,7 @@
 @implementation CardsView
 
 - initWithCards:(NSArray *)array width:(float)w printInfo:(NSPrintInfo *)pi {
+    [super init];
     [self setCards:array];
     [self setPrintInfo:pi];
     [self setCardWidth:w];
@@ -26,7 +27,6 @@
 - (BOOL)isOpaque { return YES; }
 
 - (void)dealloc {
-    NSLog(@"dealloc CardsView");
     [cards release];
     [printInfo release];
     [super dealloc];
@@ -74,7 +74,7 @@
         }
         [textView release];
     }
-    self = [super initWithFrame:NSMakeRect(0, 0, pageSize.width, y - vGap)];
+    [super initWithFrame:NSMakeRect(0, 0, pageSize.width, y - vGap)];
 }
 
 - (void)setCards:(NSArray *)value {

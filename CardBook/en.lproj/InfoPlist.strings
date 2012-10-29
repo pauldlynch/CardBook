@@ -1,0 +1,21 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "CardBook";
+CFBundleShortVersionString = "CardBook version 0.2";
+CFBundleGetInfoString = "CardBook version 0.2, © Copyright 2001-2011 P & L Software.";
+NSHumanReadableCopyright = "© Copyright 2001-2011 P & L Software.";
+CFBuildVersion = "2";
+NSServices = (
+{
+    NSPortName = CardBook;
+    NSMessage = makeCard;
+    NSSendTypes = (NSStringPboardType, NSRTFDPboardType, NSRTFPboardType);
+    NSReturnTypes = ();
+    NSMenuItem = {
+        default = "Make Card";
+    };
+    NSKeyEquivalent = {
+        default = Y;
+    };
+}
+);

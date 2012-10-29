@@ -59,16 +59,24 @@ static id sharedInstance = nil;
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setAllowsMultipleSelection:NO];
 
-    [panel beginSheetForDirectory:nil file:nil types:[NSArray arrayWithObject:@"cardbook"] modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:panel];
+    //[panel beginSheetForDirectory:nil file:nil types:[NSArray arrayWithObject:@"cardbook"] modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:) contextInfo:panel];
+    [panel setAllowedFileTypes:[NSArray arrayWithObject:@"cardbook"]];
+    [panel beginSheetModalForWindow:[self window] completionHandler:^(NSInteger result) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if (result == NSOKButton) {
+            [launchFileField setStringValue:[(id)panel filename]];
+            [defaults setObject:[(id)panel filename] forKey:@"LaunchFile"];
+        }
+    }];
 }
 
-- (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)rc contextInfo:(void *)panel {
+/*- (void)openPanelDidEnd:(NSOpenPanel *)sheet returnCode:(int)rc contextInfo:(void *)panel {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (rc == NSOKButton) {
         [launchFileField setStringValue:[(id)panel filename]];
         [defaults setObject:[(id)panel filename] forKey:@"LaunchFile"];
     }
-}
+}*/
 
 
 - (void) windowDidLoad {

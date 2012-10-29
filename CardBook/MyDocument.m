@@ -23,6 +23,11 @@ NSString *CardPboardType = @"CardPboardType";
     }
 }
 
++ (BOOL)autosavesInPlace
+{
+    return YES;
+}
+
 - (id)init {
     [super init];
     return self;
@@ -68,13 +73,13 @@ NSString *CardPboardType = @"CardPboardType";
     [super windowControllerDidLoadNib:aController];
     // Add any code here that need to be executed once the windowController has loaded the document's window.
     [tableView registerForDraggedTypes:[self pboardTypes]];
-//    [cardView setDrawsBackground:NO];
-//    [scrollView setDrawsBackground:NO];
+    //    [cardView setDrawsBackground:NO];
+    //    [scrollView setDrawsBackground:NO];
     if (!NSIsEmptyRect(windowRect)) {
         [aController setShouldCascadeWindows:NO];
         [[tableView window] setFrame:windowRect display:YES];
     }
-
+    
     // toolbar set up
     toolbar = [[[PLToolbar alloc] initWithIdentifier:@"Toolbar" target:self] retain];
     [toolbar setDefaults:[NSArray arrayWithObjects:@"add", @"delete", nil]];
@@ -86,7 +91,34 @@ NSString *CardPboardType = @"CardPboardType";
     [[cardView window] setToolbar:[toolbar toolbar]];
 }
 
-- (NSData *)dataRepresentationOfType:(NSString *)aType
+- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
+{
+    /*
+     Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
+     You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
+     */
+    /*if (outError) {
+        *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+    }
+    return nil;*/
+    
+    NSMutableData *data = [NSMutableData data];
+    NSLog(@"encode: %@", typeName);
+
+    /*NSArchiver *coder = [[NSArchiver alloc] initForWritingWithMutableData:data];
+    [coder encodeRootObject:cards];
+    [coder encodeRect:[[tableView window] frame]];*/
+    
+    NSKeyedArchiver *coder = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [coder encodeObject:cards forKey:@"CardBookCards"];
+    [coder encodeRect:[[tableView window] frame] forKey:@"CardBookWindowRect"];
+    [coder finishEncoding];
+    
+    [coder release];
+    return data;
+}
+
+/*- (NSData *)dataRepresentationOfType:(NSString *)aType
 {
     // Insert code here to write your document from the given data.  You can also choose to override -fileWrapperRepresentationOfType: or -writeToFile:ofType: instead.
     NSMutableData *data = [NSMutableData dataWithCapacity:20];
@@ -95,29 +127,70 @@ NSString *CardPboardType = @"CardPboardType";
     [coder encodeRootObject:cards];
     [coder encodeRect:[[tableView window] frame]];
     return data;
+}*/
+
+- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+{
+    /*
+     Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
+     You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
+     If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
+     */
+    /*if (outError) {
+        *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+    }
+    return YES;*/
+    
+    // test for NSKeyedUnarchiver
+    unsigned char databytes[13];
+    [data getBytes:&databytes length:13];
+    if (13 <= [data length] && ((databytes[1] == 0xb && 0 == memcmp(databytes + 2, "typedstream", 11)) || (databytes[1] == 0xb && 0 == memcmp(databytes + 2, "streamtyped", 11)))) {
+        // non-keyed archive
+        NSUnarchiver *coder = [[NSUnarchiver alloc] initForReadingWithData:data];
+        NSInteger version = [coder versionForClassName:@"MyDocument"];
+        if (version != NSNotFound)
+            NSLog(@"load version: %ld, type: %@", version, typeName);
+        [self setCards:[coder decodeObject]];
+        if (![coder isAtEnd]) {
+            windowRect = [coder decodeRect];
+        }
+        [coder release];
+    } else {
+        // keyed archive
+        NSLog(@"keyed archive");
+        NSKeyedUnarchiver *coder = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        [self setCards:[coder decodeObjectForKey:@"CardBookCards"]];
+        windowRect = [coder decodeRectForKey:@"CardBookWindowRect"];
+        [coder finishDecoding];
+        [coder release];
+    }
+    
+    [tableView reloadData];
+    return YES;    
 }
 
-- (BOOL)loadDataRepresentation:(NSData *)data ofType:(NSString *)aType
+/*- (BOOL)loadDataRepresentation:(NSData *)data ofType:(NSString *)aType
 {
     // Insert code here to read your document from the given data.  You can also choose to override -loadFileWrapperRepresentation:ofType: or -readFromFile:ofType: instead.
     NSUnarchiver *coder = [[NSUnarchiver alloc] initForReadingWithData:data];
-    int version = [coder versionForClassName:@"MyDocument"];
-    NSLog(@"load version: %d, type: %@", version, aType);
+    NSInteger version = [coder versionForClassName:@"MyDocument"];
+    NSLog(@"load version: %ld, type: %@", version, aType);
     [self setCards:[coder decodeObject]];
     if (![coder isAtEnd]) {
         windowRect = [coder decodeRect];
     }
     [tableView reloadData];
     return YES;
-}
+}*/
 
-- (void)addCard:(Card *)card atRow:(int)row {
+- (void)addCard:(Card *)card atRow:(NSInteger)row {
     NSUndoManager *undoManager = [self undoManager];
     if (row < 0) row = [cards count];
     [cards insertObject:card atIndex:row];
     if (displayCards != nil) [displayCards insertObject:card atIndex:row];
     [tableView reloadData];
-    [tableView selectRow:row byExtendingSelection:NO];
+    //[tableView selectRow:row byExtendingSelection:NO];
+    [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
     [tableView scrollRowToVisible:row];
     [[cardView textStorage] setAttributedString:[card card]];
     [cardView setSelectedRange:NSMakeRange([[cardView string] length], 0)];
@@ -133,11 +206,12 @@ NSString *CardPboardType = @"CardPboardType";
 
 - (void)deleteCard:(Card *)card {
     NSUndoManager *undoManager = [self undoManager];
-    int row = [cards indexOfObject:card];
+    NSInteger row = [cards indexOfObject:card];
     [cards removeObject:card];
     if (displayCards != nil) [displayCards removeObject:card];
     [tableView noteNumberOfRowsChanged];
-    [tableView selectRow:row-1 byExtendingSelection:NO];
+    //[tableView selectRow:row-1 byExtendingSelection:NO];
+    [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
     [tableView scrollRowToVisible:row-1];
     // [self updateChangeCount:NSChangeDone];
     [undoManager registerUndoWithTarget:self selector:@selector(addCard:) object:card];
@@ -149,7 +223,7 @@ NSString *CardPboardType = @"CardPboardType";
     NSEnumerator *i = [rows objectEnumerator];
     NSNumber *r;
     int row = 0;
-
+    
     if ([rows count] <= 0) return [NSArray array];
     while (r = [i nextObject]) {
         Card *card;
@@ -161,7 +235,7 @@ NSString *CardPboardType = @"CardPboardType";
 }
 
 - (Card *)selectedCard {
-    int row = [tableView selectedRow];
+    NSInteger row = [tableView selectedRow];
     Card *card = nil;
     if (row != -1) {
         card = [[self cards] objectAtIndex:row];
@@ -172,23 +246,31 @@ NSString *CardPboardType = @"CardPboardType";
 // should really be in an NSTableView category
 - (NSMutableArray *)selectedRows {
     NSMutableArray* list = [NSMutableArray array];
-    NSEnumerator *i = [tableView selectedRowEnumerator];
+    /*NSEnumerator *i = [tableView selectedRowEnumerator];
     NSNumber *r;
     while (r = [i nextObject]) {
         [list addObject:r];
-    }
+    }*/
+    NSIndexSet *is = [tableView selectedRowIndexes];
+    [is enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [list addObject:[NSNumber numberWithInteger:idx]];
+    }];
     return list;
 }
 
 - (NSMutableArray *)selectedCards {
     NSMutableArray* list = [NSMutableArray array];
-    NSEnumerator *i = [tableView selectedRowEnumerator];
+    /*NSEnumerator *i = [tableView selectedRowEnumerator];
     NSNumber *r;
     int row = 0;
     while (r = [i nextObject]) {
         if (row > [r intValue]) row = [r intValue];
         [list addObject:[[self cards] objectAtIndex:[r intValue]]];
-    }
+    }*/
+    NSIndexSet *is = [tableView selectedRowIndexes];
+    [is enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [list addObject:[[self cards] objectAtIndex:idx]];
+    }];
     return list;
 }
 
@@ -196,11 +278,12 @@ NSString *CardPboardType = @"CardPboardType";
     NSEnumerator *e = [array reverseObjectEnumerator];
     Card *card;
     BOOL extend = NO;
-
+    
     while (card = [e nextObject]) {
-        int i = [[self cards] indexOfObject:card];
+        NSInteger i = [[self cards] indexOfObject:card];
         if (i != -1) {
-            [tableView selectRow:i byExtendingSelection:extend];
+            //[tableView selectRow:i byExtendingSelection:extend];
+            [tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:extend];
             [tableView scrollRowToVisible:i];
             extend = YES;
         }
@@ -215,7 +298,7 @@ NSString *CardPboardType = @"CardPboardType";
 
 -(IBAction) deleteSelectedCard:(id)sender {
     Card *card;
-    int row = [tableView selectedRow];
+    NSInteger row = [tableView selectedRow];
     if (row != -1) {
         NSArray *cardArray = [self selectedCards];
         NSEnumerator *e = [cardArray objectEnumerator];
@@ -264,7 +347,7 @@ NSString *CardPboardType = @"CardPboardType";
 
 - (BOOL) validateMenuItem:(NSMenuItem *)item {
     BOOL isValid = NO;
-
+    
     if ([item action] == @selector(newCard:)) {
         isValid = YES;
     }
@@ -290,10 +373,10 @@ NSString *CardPboardType = @"CardPboardType";
 // notifications
 
 - (void) tableViewSelectionDidChange:(NSNotification *)note {
-    int selectedRow = [tableView selectedRow];
+    NSInteger selectedRow = [tableView selectedRow];
     BOOL hasSelectedRow = (selectedRow != -1);
     Card *selectedCard = nil;
-
+    
     // update control state
     [cardView setEditable:hasSelectedRow];
     [deleteButton setEnabled:hasSelectedRow];
@@ -322,14 +405,14 @@ NSString *CardPboardType = @"CardPboardType";
 
 - (void) textDidChange:(NSNotification *)notification {
     NSUndoManager *undoManager = [self undoManager];
-    int selectedRow = [tableView selectedRow];
+    NSInteger selectedRow = [tableView selectedRow];
     if (selectedRow != -1) {
         Card *card = [[self cards] objectAtIndex:selectedRow];
         // NSData *oldCard = [card card];
         // [[undoManager prepareWithInvocationTarget:card] setCard:oldCard];
         [undoManager registerUndoWithTarget:card selector:@selector(setCard:) object:[card card]];
         [undoManager setActionName:@"Change Card"];
-        [card setCard:[[NSAttributedString alloc] initWithAttributedString:[cardView textStorage]]];
+        [card setCard:[[[NSAttributedString alloc] initWithAttributedString:[cardView textStorage]] autorelease]];
         // [self updateChangeCount:NSChangeDone];
         [tableView reloadData];
     }
@@ -360,6 +443,7 @@ NSString *CardPboardType = @"CardPboardType";
     [pboard setString:[aString string] forType:NSStringPboardType];
     [pboard setData:[aString RTFDFromRange:NSMakeRange(0, [aString length]) documentAttributes:nil] forType:NSRTFDPboardType];
     [pboard setData:[aString RTFFromRange:NSMakeRange(0, [aString length]) documentAttributes:nil] forType:NSRTFPboardType];
+    [aString release];
 }
 
 - (IBAction)copy:(id)sender {
@@ -380,13 +464,13 @@ NSString *CardPboardType = @"CardPboardType";
     [self addCardFromPboard:pboard atRow:[tableView selectedRow]-1];
 }
 
-- (void)addCardFromPboard:(NSPasteboard *)pboard atRow:(int)row {
+- (void)addCardFromPboard:(NSPasteboard *)pboard atRow:(NSInteger)row {
     Card *card;
     NSData *data;
     NSString *type;
     
     type = [pboard availableTypeFromArray:[self pboardTypes]];
-
+    
     if ([type isEqual:CardPboardType]) {
         NSEnumerator *e;
         NSArray *cardArray;
@@ -420,17 +504,20 @@ NSString *CardPboardType = @"CardPboardType";
     CardsView *view = [[CardsView alloc] initWithCards:[self cards] width:[[tableView window] frame].size.width printInfo:[self printInfo]];
     NSPrintOperation *printOp = [NSPrintOperation printOperationWithView:view printInfo:[self printInfo]];
     [view setCardWidth:[[tableView window] frame].size.width];
-    [printOp setShowPanels:flag];
+    //[printOp setShowPanels:flag];
+    [printOp setShowsPrintPanel:YES];
+    [printOp setShowsProgressPanel:YES];
     [printOp runOperation];
     [view release];
 }
 
 /* - (void)windowDidMove:(NSNotification *)aNotification {
-    [self updateChangeCount:NSChangeDone];
-}
-
-- (void)windowDidResize:(NSNotification *)aNotification {
-    [self updateChangeCount:NSChangeDone];
-} */
+ [self updateChangeCount:NSChangeDone];
+ }
+ 
+ - (void)windowDidResize:(NSNotification *)aNotification {
+ [self updateChangeCount:NSChangeDone];
+ } */
 
 @end
+

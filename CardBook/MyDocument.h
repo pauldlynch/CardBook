@@ -20,7 +20,7 @@ extern NSString *CardPboardType;
     NSMutableArray *cards;
     NSMutableArray *displayCards;
     NSArray *draggedCards;
-
+    
     NSRect windowRect;
     NSString *statusMessage;
     PLToolbar *toolbar;
@@ -45,18 +45,18 @@ extern NSString *CardPboardType;
 - (IBAction)cut:(id)sender;
 - (IBAction)copy:(id)sender;
 - (IBAction)paste:(id)sender;
-    
+
 - (NSMutableArray *)cards;
 - (void)setCards:(NSMutableArray *)array;
 - (NSArray *)cardsForRows:(NSArray *)rows;
 - (Card *)selectedCard;
 - (NSMutableArray *)selectedCards;
 - (void)setSelectedCards:(NSArray *)array;
-- (void)addCard:(Card *)card atRow:(int)row;
+- (void)addCard:(Card *)card atRow:(NSInteger)row;
 - (void)addCard:(Card *)card;
 - (void)deleteCard:(Card *)card;
 - (void)copyRows:(NSArray *)rows toPasteboard:(NSPasteboard *)pboard;
 - (void)addCardFromPboard:(NSPasteboard *)pboard;
-- (void)addCardFromPboard:(NSPasteboard *)pboard atRow:(int)row;
+- (void)addCardFromPboard:(NSPasteboard *)pboard atRow:(NSInteger)row;
 
 @end

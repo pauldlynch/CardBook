@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DAAEA90E13E1F7B600B463AC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAAEA90D13E1F7B600B463AC /* Cocoa.framework */; };
+		DAAEA91813E1F7B600B463AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAAEA91613E1F7B600B463AC /* InfoPlist.strings */; };
+		DAAEA91A13E1F7B600B463AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEA91913E1F7B600B463AC /* main.m */; };
+		DAAEA91E13E1F7B600B463AC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DAAEA91C13E1F7B600B463AC /* Credits.rtf */; };
+		DAAEA92113E1F7B600B463AC /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEA92013E1F7B600B463AC /* MyDocument.m */; };
+		DADA41AF13E2BAFF007F498F /* add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A413E2BAFF007F498F /* add.tiff */; };
+		DADA41B013E2BAFF007F498F /* copy.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A513E2BAFF007F498F /* copy.tiff */; };
+		DADA41B113E2BAFF007F498F /* cut.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A613E2BAFF007F498F /* cut.tiff */; };
+		DADA41B213E2BAFF007F498F /* filecardsmall.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A713E2BAFF007F498F /* filecardsmall.tiff */; };
+		DADA41B313E2BAFF007F498F /* find.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A813E2BAFF007F498F /* find.tiff */; };
+		DADA41B413E2BAFF007F498F /* inspect.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41A913E2BAFF007F498F /* inspect.tiff */; };
+		DADA41B513E2BAFF007F498F /* inspector-32.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AA13E2BAFF007F498F /* inspector-32.tiff */; };
+		DADA41B613E2BAFF007F498F /* paste.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AB13E2BAFF007F498F /* paste.tiff */; };
+		DADA41B713E2BAFF007F498F /* save.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AC13E2BAFF007F498F /* save.tiff */; };
+		DADA41B813E2BAFF007F498F /* sort.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AD13E2BAFF007F498F /* sort.tiff */; };
+		DADA41B913E2BAFF007F498F /* undo.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AE13E2BAFF007F498F /* undo.tiff */; };
+		DADA41C513E2BB31007F498F /* CardBook Features Planner.cardbook in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BA13E2BB31007F498F /* CardBook Features Planner.cardbook */; };
+		DADA41C613E2BB31007F498F /* CardBook.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BB13E2BB31007F498F /* CardBook.scriptSuite */; };
+		DADA41C713E2BB31007F498F /* CardBook.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BC13E2BB31007F498F /* CardBook.scriptTerminology */; };
+		DADA41C813E2BB31007F498F /* CardDocs.icns in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BD13E2BB31007F498F /* CardDocs.icns */; };
+		DADA41C913E2BB31007F498F /* Cards.icns in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BE13E2BB31007F498F /* Cards.icns */; };
+		DADA41CA13E2BB31007F498F /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BF13E2BB31007F498F /* Defaults.plist */; };
+		DADA41CB13E2BB31007F498F /* delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41C013E2BB31007F498F /* delete.tiff */; };
+		DADA41CC13E2BB31007F498F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = DADA41C113E2BB31007F498F /* License.txt */; };
+		DADA41CD13E2BB31007F498F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DADA41C213E2BB31007F498F /* Localizable.strings */; };
+		DADA41CF13E2BB31007F498F /* Toolbar.plist in Resources */ = {isa = PBXBuildFile; fileRef = DADA41C413E2BB31007F498F /* Toolbar.plist */; };
+		DADA41D213E2BBAB007F498F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADA41D013E2BBAB007F498F /* MainMenu.xib */; };
+		DADA41D313E2BBAB007F498F /* MyDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = DADA41D113E2BBAB007F498F /* MyDocument.xib */; };
+		DADA41D713E2BBD9007F498F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41D613E2BBD9007F498F /* AppController.m */; };
+		DADA41DA13E2BBEE007F498F /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41D913E2BBEE007F498F /* Card.m */; };
+		DADA41DE13E2BC06007F498F /* CardInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41DC13E2BC06007F498F /* CardInspector.m */; };
+		DADA41DF13E2BC06007F498F /* CardInspector.nib in Resources */ = {isa = PBXBuildFile; fileRef = DADA41DD13E2BC06007F498F /* CardInspector.nib */; };
+		DADA41E313E2BC38007F498F /* CardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41E213E2BC38007F498F /* CardsView.m */; };
+		DADA41E713E2BC69007F498F /* FindPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41E513E2BC69007F498F /* FindPanel.m */; };
+		DADA41E813E2BC69007F498F /* FindPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = DADA41E613E2BC69007F498F /* FindPanel.nib */; };
+		DADA41ED13E2BC96007F498F /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = DADA41EA13E2BC96007F498F /* Preferences.nib */; };
+		DADA41EE13E2BC96007F498F /* PreferencesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41EC13E2BC96007F498F /* PreferencesPanelController.m */; };
+		DADA41F213E2BCC3007F498F /* MyDocumentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41F113E2BCC3007F498F /* MyDocumentDataSource.m */; };
+		DADA41F513E2BCD5007F498F /* PLToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DADA41F413E2BCD5007F498F /* PLToolbar.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DAAEA90913E1F7B600B463AC /* CardBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAAEA90D13E1F7B600B463AC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DAAEA91013E1F7B600B463AC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DAAEA91113E1F7B600B463AC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DAAEA91213E1F7B600B463AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAAEA91513E1F7B600B463AC /* CardBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardBook-Info.plist"; sourceTree = "<group>"; };
+		DAAEA91713E1F7B600B463AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAAEA91913E1F7B600B463AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAAEA91B13E1F7B600B463AC /* CardBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardBook-Prefix.pch"; sourceTree = "<group>"; };
+		DAAEA91D13E1F7B600B463AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DAAEA91F13E1F7B600B463AC /* MyDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		DAAEA92013E1F7B600B463AC /* MyDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		DAC16662163B1E1300D3D701 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DAC16666163B236700D3D701 /* Addresses.cardbook */ = {isa = PBXFileReference; lastKnownFileType = file; path = Addresses.cardbook; sourceTree = "<group>"; };
+		DAC16667163B236700D3D701 /* CardBook Cocoa Features.cardbook */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CardBook Cocoa Features.cardbook"; sourceTree = "<group>"; };
+		DAC16668163B236700D3D701 /* CardBook Features.cardbook */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CardBook Features.cardbook"; sourceTree = "<group>"; };
+		DAC16669163B236700D3D701 /* Food.cardbook */ = {isa = PBXFileReference; lastKnownFileType = file; path = Food.cardbook; sourceTree = "<group>"; };
+		DADA41A413E2BAFF007F498F /* add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = add.tiff; sourceTree = "<group>"; };
+		DADA41A513E2BAFF007F498F /* copy.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = copy.tiff; sourceTree = "<group>"; };
+		DADA41A613E2BAFF007F498F /* cut.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = cut.tiff; sourceTree = "<group>"; };
+		DADA41A713E2BAFF007F498F /* filecardsmall.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = filecardsmall.tiff; sourceTree = "<group>"; };
+		DADA41A813E2BAFF007F498F /* find.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = find.tiff; sourceTree = "<group>"; };
+		DADA41A913E2BAFF007F498F /* inspect.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = inspect.tiff; sourceTree = "<group>"; };
+		DADA41AA13E2BAFF007F498F /* inspector-32.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "inspector-32.tiff"; sourceTree = "<group>"; };
+		DADA41AB13E2BAFF007F498F /* paste.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = paste.tiff; sourceTree = "<group>"; };
+		DADA41AC13E2BAFF007F498F /* save.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = save.tiff; sourceTree = "<group>"; };
+		DADA41AD13E2BAFF007F498F /* sort.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sort.tiff; sourceTree = "<group>"; };
+		DADA41AE13E2BAFF007F498F /* undo.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = undo.tiff; sourceTree = "<group>"; };
+		DADA41BA13E2BB31007F498F /* CardBook Features Planner.cardbook */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CardBook Features Planner.cardbook"; sourceTree = "<group>"; };
+		DADA41BB13E2BB31007F498F /* CardBook.scriptSuite */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptSuite; path = CardBook.scriptSuite; sourceTree = "<group>"; };
+		DADA41BC13E2BB31007F498F /* CardBook.scriptTerminology */ = {isa = PBXFileReference; lastKnownFileType = text.plist.scriptTerminology; path = CardBook.scriptTerminology; sourceTree = "<group>"; };
+		DADA41BD13E2BB31007F498F /* CardDocs.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CardDocs.icns; sourceTree = "<group>"; };
+		DADA41BE13E2BB31007F498F /* Cards.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cards.icns; sourceTree = "<group>"; };
+		DADA41BF13E2BB31007F498F /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		DADA41C013E2BB31007F498F /* delete.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = delete.tiff; sourceTree = "<group>"; };
+		DADA41C113E2BB31007F498F /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		DADA41C213E2BB31007F498F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DADA41C413E2BB31007F498F /* Toolbar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Toolbar.plist; sourceTree = "<group>"; };
+		DADA41D013E2BBAB007F498F /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		DADA41D113E2BBAB007F498F /* MyDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocument.xib; sourceTree = "<group>"; };
+		DADA41D513E2BBD9007F498F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		DADA41D613E2BBD9007F498F /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		DADA41D813E2BBEE007F498F /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		DADA41D913E2BBEE007F498F /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		DADA41DB13E2BC06007F498F /* CardInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInspector.h; sourceTree = "<group>"; };
+		DADA41DC13E2BC06007F498F /* CardInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInspector.m; sourceTree = "<group>"; };
+		DADA41DD13E2BC06007F498F /* CardInspector.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = CardInspector.nib; sourceTree = "<group>"; };
+		DADA41E113E2BC38007F498F /* CardsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsView.h; sourceTree = "<group>"; };
+		DADA41E213E2BC38007F498F /* CardsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsView.m; sourceTree = "<group>"; };
+		DADA41E413E2BC69007F498F /* FindPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPanel.h; sourceTree = "<group>"; };
+		DADA41E513E2BC69007F498F /* FindPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPanel.m; sourceTree = "<group>"; };
+		DADA41E613E2BC69007F498F /* FindPanel.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = FindPanel.nib; sourceTree = "<group>"; };
+		DADA41EA13E2BC96007F498F /* Preferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Preferences.nib; sourceTree = "<group>"; };
+		DADA41EB13E2BC96007F498F /* PreferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPanelController.h; sourceTree = "<group>"; };
+		DADA41EC13E2BC96007F498F /* PreferencesPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesPanelController.m; sourceTree = "<group>"; };
+		DADA41F013E2BCC3007F498F /* MyDocumentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocumentDataSource.h; sourceTree = "<group>"; };
+		DADA41F113E2BCC3007F498F /* MyDocumentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocumentDataSource.m; sourceTree = "<group>"; };
+		DADA41F313E2BCD5007F498F /* PLToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLToolbar.h; sourceTree = "<group>"; };
+		DADA41F413E2BCD5007F498F /* PLToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLToolbar.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAAEA90613E1F7B600B463AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAAEA90E13E1F7B600B463AC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAAEA8FE13E1F7B500B463AC = {
+			isa = PBXGroup;
+			children = (
+				DAC16662163B1E1300D3D701 /* README.md */,
+				DAC16665163B236700D3D701 /* Samples */,
+				DAAEA91313E1F7B600B463AC /* CardBook */,
+				DAAEA90C13E1F7B600B463AC /* Frameworks */,
+				DAAEA90A13E1F7B600B463AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAAEA90A13E1F7B600B463AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAAEA90913E1F7B600B463AC /* CardBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAAEA90C13E1F7B600B463AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAAEA90D13E1F7B600B463AC /* Cocoa.framework */,
+				DAAEA90F13E1F7B600B463AC /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAAEA90F13E1F7B600B463AC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAAEA91013E1F7B600B463AC /* AppKit.framework */,
+				DAAEA91113E1F7B600B463AC /* CoreData.framework */,
+				DAAEA91213E1F7B600B463AC /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DAAEA91313E1F7B600B463AC /* CardBook */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41C113E2BB31007F498F /* License.txt */,
+				DADA41BA13E2BB31007F498F /* CardBook Features Planner.cardbook */,
+				DADA41D813E2BBEE007F498F /* Card.h */,
+				DADA41D913E2BBEE007F498F /* Card.m */,
+				DADA41D513E2BBD9007F498F /* AppController.h */,
+				DADA41D613E2BBD9007F498F /* AppController.m */,
+				DADA41D013E2BBAB007F498F /* MainMenu.xib */,
+				DADA41EF13E2BC9C007F498F /* Preferences */,
+				DADA41D413E2BBB6007F498F /* MyDocument */,
+				DADA41E013E2BC0D007F498F /* CardInspector */,
+				DADA41E913E2BC72007F498F /* FindPanel */,
+				DADA41F313E2BCD5007F498F /* PLToolbar.h */,
+				DADA41F413E2BCD5007F498F /* PLToolbar.m */,
+				DAAEA91413E1F7B600B463AC /* Supporting Files */,
+			);
+			path = CardBook;
+			sourceTree = "<group>";
+		};
+		DAAEA91413E1F7B600B463AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAAEA91513E1F7B600B463AC /* CardBook-Info.plist */,
+				DAAEA91613E1F7B600B463AC /* InfoPlist.strings */,
+				DAAEA91913E1F7B600B463AC /* main.m */,
+				DAAEA91B13E1F7B600B463AC /* CardBook-Prefix.pch */,
+				DAAEA91C13E1F7B600B463AC /* Credits.rtf */,
+				DADA41BE13E2BB31007F498F /* Cards.icns */,
+				DADA41BD13E2BB31007F498F /* CardDocs.icns */,
+				DADA41BB13E2BB31007F498F /* CardBook.scriptSuite */,
+				DADA41BC13E2BB31007F498F /* CardBook.scriptTerminology */,
+				DADA41BF13E2BB31007F498F /* Defaults.plist */,
+				DADA41C213E2BB31007F498F /* Localizable.strings */,
+				DADA41C413E2BB31007F498F /* Toolbar.plist */,
+				DADA41A313E2BABE007F498F /* Images */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAC16665163B236700D3D701 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				DAC16666163B236700D3D701 /* Addresses.cardbook */,
+				DAC16667163B236700D3D701 /* CardBook Cocoa Features.cardbook */,
+				DAC16668163B236700D3D701 /* CardBook Features.cardbook */,
+				DAC16669163B236700D3D701 /* Food.cardbook */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		DADA41A313E2BABE007F498F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41A413E2BAFF007F498F /* add.tiff */,
+				DADA41A513E2BAFF007F498F /* copy.tiff */,
+				DADA41A613E2BAFF007F498F /* cut.tiff */,
+				DADA41C013E2BB31007F498F /* delete.tiff */,
+				DADA41A713E2BAFF007F498F /* filecardsmall.tiff */,
+				DADA41A813E2BAFF007F498F /* find.tiff */,
+				DADA41A913E2BAFF007F498F /* inspect.tiff */,
+				DADA41AA13E2BAFF007F498F /* inspector-32.tiff */,
+				DADA41AB13E2BAFF007F498F /* paste.tiff */,
+				DADA41AC13E2BAFF007F498F /* save.tiff */,
+				DADA41AD13E2BAFF007F498F /* sort.tiff */,
+				DADA41AE13E2BAFF007F498F /* undo.tiff */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DADA41D413E2BBB6007F498F /* MyDocument */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41F013E2BCC3007F498F /* MyDocumentDataSource.h */,
+				DADA41F113E2BCC3007F498F /* MyDocumentDataSource.m */,
+				DAAEA91F13E1F7B600B463AC /* MyDocument.h */,
+				DAAEA92013E1F7B600B463AC /* MyDocument.m */,
+				DADA41D113E2BBAB007F498F /* MyDocument.xib */,
+				DADA41E113E2BC38007F498F /* CardsView.h */,
+				DADA41E213E2BC38007F498F /* CardsView.m */,
+			);
+			name = MyDocument;
+			sourceTree = "<group>";
+		};
+		DADA41E013E2BC0D007F498F /* CardInspector */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41DB13E2BC06007F498F /* CardInspector.h */,
+				DADA41DC13E2BC06007F498F /* CardInspector.m */,
+				DADA41DD13E2BC06007F498F /* CardInspector.nib */,
+			);
+			name = CardInspector;
+			sourceTree = "<group>";
+		};
+		DADA41E913E2BC72007F498F /* FindPanel */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41E413E2BC69007F498F /* FindPanel.h */,
+				DADA41E513E2BC69007F498F /* FindPanel.m */,
+				DADA41E613E2BC69007F498F /* FindPanel.nib */,
+			);
+			name = FindPanel;
+			sourceTree = "<group>";
+		};
+		DADA41EF13E2BC9C007F498F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				DADA41EA13E2BC96007F498F /* Preferences.nib */,
+				DADA41EB13E2BC96007F498F /* PreferencesPanelController.h */,
+				DADA41EC13E2BC96007F498F /* PreferencesPanelController.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAAEA90813E1F7B600B463AC /* CardBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAAEA92A13E1F7B600B463AC /* Build configuration list for PBXNativeTarget "CardBook" */;
+			buildPhases = (
+				DAAEA90513E1F7B600B463AC /* Sources */,
+				DAAEA90613E1F7B600B463AC /* Frameworks */,
+				DAAEA90713E1F7B600B463AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardBook;
+			productName = CardBook;
+			productReference = DAAEA90913E1F7B600B463AC /* CardBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAAEA90013E1F7B500B463AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "P & L Systems";
+			};
+			buildConfigurationList = DAAEA90313E1F7B500B463AC /* Build configuration list for PBXProject "CardBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DAAEA8FE13E1F7B500B463AC;
+			productRefGroup = DAAEA90A13E1F7B600B463AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAAEA90813E1F7B600B463AC /* CardBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAAEA90713E1F7B600B463AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAAEA91813E1F7B600B463AC /* InfoPlist.strings in Resources */,
+				DAAEA91E13E1F7B600B463AC /* Credits.rtf in Resources */,
+				DADA41AF13E2BAFF007F498F /* add.tiff in Resources */,
+				DADA41B013E2BAFF007F498F /* copy.tiff in Resources */,
+				DADA41B113E2BAFF007F498F /* cut.tiff in Resources */,
+				DADA41B213E2BAFF007F498F /* filecardsmall.tiff in Resources */,
+				DADA41B313E2BAFF007F498F /* find.tiff in Resources */,
+				DADA41B413E2BAFF007F498F /* inspect.tiff in Resources */,
+				DADA41B513E2BAFF007F498F /* inspector-32.tiff in Resources */,
+				DADA41B613E2BAFF007F498F /* paste.tiff in Resources */,
+				DADA41B713E2BAFF007F498F /* save.tiff in Resources */,
+				DADA41B813E2BAFF007F498F /* sort.tiff in Resources */,
+				DADA41B913E2BAFF007F498F /* undo.tiff in Resources */,
+				DADA41C513E2BB31007F498F /* CardBook Features Planner.cardbook in Resources */,
+				DADA41C613E2BB31007F498F /* CardBook.scriptSuite in Resources */,
+				DADA41C713E2BB31007F498F /* CardBook.scriptTerminology in Resources */,
+				DADA41C813E2BB31007F498F /* CardDocs.icns in Resources */,
+				DADA41C913E2BB31007F498F /* Cards.icns in Resources */,
+				DADA41CA13E2BB31007F498F /* Defaults.plist in Resources */,
+				DADA41CB13E2BB31007F498F /* delete.tiff in Resources */,
+				DADA41CC13E2BB31007F498F /* License.txt in Resources */,
+				DADA41CD13E2BB31007F498F /* Localizable.strings in Resources */,
+				DADA41CF13E2BB31007F498F /* Toolbar.plist in Resources */,
+				DADA41D213E2BBAB007F498F /* MainMenu.xib in Resources */,
+				DADA41D313E2BBAB007F498F /* MyDocument.xib in Resources */,
+				DADA41DF13E2BC06007F498F /* CardInspector.nib in Resources */,
+				DADA41E813E2BC69007F498F /* FindPanel.nib in Resources */,
+				DADA41ED13E2BC96007F498F /* Preferences.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAAEA90513E1F7B600B463AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAAEA91A13E1F7B600B463AC /* main.m in Sources */,
+				DAAEA92113E1F7B600B463AC /* MyDocument.m in Sources */,
+				DADA41D713E2BBD9007F498F /* AppController.m in Sources */,
+				DADA41DA13E2BBEE007F498F /* Card.m in Sources */,
+				DADA41DE13E2BC06007F498F /* CardInspector.m in Sources */,
+				DADA41E313E2BC38007F498F /* CardsView.m in Sources */,
+				DADA41E713E2BC69007F498F /* FindPanel.m in Sources */,
+				DADA41EE13E2BC96007F498F /* PreferencesPanelController.m in Sources */,
+				DADA41F213E2BCC3007F498F /* MyDocumentDataSource.m in Sources */,
+				DADA41F513E2BCD5007F498F /* PLToolbar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAAEA91613E1F7B600B463AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAEA91713E1F7B600B463AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAAEA91C13E1F7B600B463AC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAAEA91D13E1F7B600B463AC /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAAEA92813E1F7B600B463AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DAAEA92913E1F7B600B463AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DAAEA92B13E1F7B600B463AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardBook/CardBook-Prefix.pch";
+				INFOPLIST_FILE = "CardBook/CardBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DAAEA92C13E1F7B600B463AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CardBook/CardBook-Prefix.pch";
+				INFOPLIST_FILE = "CardBook/CardBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAAEA90313E1F7B500B463AC /* Build configuration list for PBXProject "CardBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAAEA92813E1F7B600B463AC /* Debug */,
+				DAAEA92913E1F7B600B463AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAAEA92A13E1F7B600B463AC /* Build configuration list for PBXNativeTarget "CardBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAAEA92B13E1F7B600B463AC /* Debug */,
+				DAAEA92C13E1F7B600B463AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAAEA90013E1F7B500B463AC /* Project object */;
+}
