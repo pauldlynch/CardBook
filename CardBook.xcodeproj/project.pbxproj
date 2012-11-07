@@ -301,6 +301,7 @@
 		DAAEA90013E1F7B500B463AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "P & L Systems";
 			};
 			buildConfigurationList = DAAEA90313E1F7B500B463AC /* Build configuration list for PBXProject "CardBook" */;
@@ -446,6 +447,7 @@
 		DAAEA92B13E1F7B600B463AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardBook/CardBook-Prefix.pch";
 				INFOPLIST_FILE = "CardBook/CardBook-Info.plist";
@@ -457,6 +459,7 @@
 		DAAEA92C13E1F7B600B463AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardBook/CardBook-Prefix.pch";
 				INFOPLIST_FILE = "CardBook/CardBook-Info.plist";
