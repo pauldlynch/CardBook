@@ -3,6 +3,12 @@ CardBook
 
 CardBook - MacOS X card index program
 
+#CardBook 0.3.1
+
+Patch fix to correct a problem with archive formats.  The 'locked' flag was stored as a `BOOL` for most of its history, but one historical version stored as an `int`, without changing the archive version number.  As this was using non-keyed archiving, it isn't possible to recover a failed load when the worong type is checked for.  So I implemented a hidden preference, 'UseBOOLForLocked', which toggles when an unexpected type is found, and I present an alert asking to retry the file load.  Sorry.
+
+Newer builds should be using `NSKeyedArchiver`, so the problem shouldn't arise.
+
 #CardBook 0.3 README
 
 This is 0.2 (for MacOS X 10.2) updated for Lion support and Xcode 4.5.

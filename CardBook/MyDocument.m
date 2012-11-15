@@ -146,15 +146,23 @@ NSString *CardPboardType = @"CardPboardType";
     [data getBytes:&databytes length:13];
     if (13 <= [data length] && ((databytes[1] == 0xb && 0 == memcmp(databytes + 2, "typedstream", 11)) || (databytes[1] == 0xb && 0 == memcmp(databytes + 2, "streamtyped", 11)))) {
         // non-keyed archive
-        NSUnarchiver *coder = [[NSUnarchiver alloc] initForReadingWithData:data];
-        NSInteger version = [coder versionForClassName:@"MyDocument"];
-        if (version != NSNotFound)
-            NSLog(@"load version: %ld, type: %@", version, typeName);
-        [self setCards:[coder decodeObject]];
-        if (![coder isAtEnd]) {
-            windowRect = [coder decodeRect];
+        @try {
+            NSUnarchiver *coder = [[NSUnarchiver alloc] initForReadingWithData:data];
+            NSInteger version = [coder versionForClassName:@"MyDocument"];
+            if (version != NSNotFound)
+                NSLog(@"load version: %ld, type: %@", version, typeName);
+            [self setCards:[coder decodeObject]];
+            if (![coder isAtEnd]) {
+                windowRect = [coder decodeRect];
+            }
+            [coder release];
         }
-        [coder release];
+        @catch (NSException *exception) {
+            NSLog(@"%s %@", __PRETTY_FUNCTION__, exception.name);
+            return NO;
+        }
+        @finally {
+        }
     } else {
         // keyed archive
         //NSLog(@"keyed archive");

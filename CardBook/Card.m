@@ -81,7 +81,24 @@
     else
         [self setCard:[coder decodeObject]];
     if (version == 3) {
-        [coder decodeValueOfObjCType:@encode(bool) at:&isLocked];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        BOOL useBool = [defaults boolForKey:@"UseBOOLForLocked"];
+        @try {
+            if (useBool) {
+                NSLog(@"useBool");
+                [coder decodeValueOfObjCType:@encode(bool) at:&isLocked];
+            } else {
+                NSLog(@"useInt");
+                [coder decodeValueOfObjCType:@encode(int) at:&isLocked];
+            }
+        } @catch (NSException *exception) {
+            NSLog(@"Unarchiver exception: %@", exception.name);
+            [defaults setBool:!useBool forKey:@"UseBOOLForLocked"];
+            [defaults synchronize];
+            NSRunAlertPanel(@"Invalid Cardbook file", @"Switched to alternate format, please try again.", @"Continue", nil, nil);
+            return nil;
+        } @finally {
+        }
     }
     return self;
 }
