@@ -23,7 +23,6 @@
 		DADA41B713E2BAFF007F498F /* save.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AC13E2BAFF007F498F /* save.tiff */; };
 		DADA41B813E2BAFF007F498F /* sort.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AD13E2BAFF007F498F /* sort.tiff */; };
 		DADA41B913E2BAFF007F498F /* undo.tiff in Resources */ = {isa = PBXBuildFile; fileRef = DADA41AE13E2BAFF007F498F /* undo.tiff */; };
-		DADA41C513E2BB31007F498F /* CardBook Features Planner.cardbook in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BA13E2BB31007F498F /* CardBook Features Planner.cardbook */; };
 		DADA41C613E2BB31007F498F /* CardBook.scriptSuite in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BB13E2BB31007F498F /* CardBook.scriptSuite */; };
 		DADA41C713E2BB31007F498F /* CardBook.scriptTerminology in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BC13E2BB31007F498F /* CardBook.scriptTerminology */; };
 		DADA41C813E2BB31007F498F /* CardDocs.icns in Resources */ = {isa = PBXBuildFile; fileRef = DADA41BD13E2BB31007F498F /* CardDocs.icns */; };
@@ -339,7 +338,6 @@
 				DADA41B713E2BAFF007F498F /* save.tiff in Resources */,
 				DADA41B813E2BAFF007F498F /* sort.tiff in Resources */,
 				DADA41B913E2BAFF007F498F /* undo.tiff in Resources */,
-				DADA41C513E2BB31007F498F /* CardBook Features Planner.cardbook in Resources */,
 				DADA41C613E2BB31007F498F /* CardBook.scriptSuite in Resources */,
 				DADA41C713E2BB31007F498F /* CardBook.scriptTerminology in Resources */,
 				DADA41C813E2BB31007F498F /* CardDocs.icns in Resources */,

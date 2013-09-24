@@ -1,9 +1,9 @@
 /* Localized versions of Info.plist keys */
 
 CFBundleName = "CardBook";
-CFBundleShortVersionString = "CardBook version 0.2";
-CFBundleGetInfoString = "CardBook version 0.2, © Copyright 2001-2011 P & L Software.";
-NSHumanReadableCopyright = "© Copyright 2001-2011 P & L Software.";
+CFBundleShortVersionString = "CardBook version 0.3.1";
+CFBundleGetInfoString = "CardBook version 0.3.1, © Copyright 2001-2012 P & L Software Ltd.";
+NSHumanReadableCopyright = "© Copyright 2001-2012 P & L Software Ltd.";
 CFBuildVersion = "2";
 NSServices = (
 {
